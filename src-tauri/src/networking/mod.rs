@@ -872,8 +872,7 @@ fn download_probe_result() -> NetworkDiagnosticResult {
                 label: "Small external download probe".to_owned(),
                 state: NetworkDiagnosticState::Pass,
                 value: Some(format!(
-                    "{} bytes received; approximate probe rate {} B/s",
-                    bytes, bytes_per_second
+                    "{bytes} bytes received; approximate probe rate {bytes_per_second} B/s"
                 )),
                 local_only: false,
                 contacted_internet: true,

@@ -1,0 +1,70 @@
+name: Bug report
+description: Report a reproducible problem using redacted, synthetic evidence.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping improve Mr Manager. Do not include secrets or private machine data.
+  - type: input
+    id: commit
+    attributes:
+      label: Version or commit
+      description: Paste the commit SHA or describe the local build.
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+      placeholder: Windows 11 24H2
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the observed behavior and the section of Mr Manager involved.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Use synthetic projects or redacted values wherever possible.
+      placeholder: |
+        1. Open ...
+        2. Select ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: dropdown
+    id: permissions
+    attributes:
+      label: Permission context
+      options:
+        - Standard user
+        - Administrator
+        - Unknown
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Redacted diagnostics
+      description: Optional. Remove usernames, paths, IP addresses, tokens, environment values, and private project content.
+      render: text
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed secrets, personal paths, addresses, and private machine data.
+          required: true
+        - label: This report is not a security vulnerability requiring private disclosure.
+          required: true

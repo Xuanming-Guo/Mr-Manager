@@ -1,41 +1,60 @@
 # Contributing to Mr Manager
 
-Thank you for helping build Mr Manager. The project is early-stage, Windows-first, local-first, and safety-sensitive. Contributions should preserve user trust before adding convenience.
+Thank you for helping improve Mr Manager. It is Windows-first, local-first, and safety-sensitive, so contributions must preserve user trust as well as functionality.
 
-## Before you start
+## Before starting
 
-- Read `AGENTS.md`, `docs/IMPLEMENTATION_PLAN.md`, `docs/IMPLEMENTATION_STATUS.md`, and `docs/DECISIONS.md`.
-- Discuss large features, dependency additions, trust-boundary changes, or changes to the phase order before implementation.
-- Work only in the active phase. Phase 10 release packaging, signing, updater behavior, and public-release work require explicit approval after the Phase 9 internal review gate.
-- Keep changes focused and preserve unrelated worktree changes.
+- Search existing issues before opening a new one.
+- Discuss large features, dependency additions, new permissions, trust-boundary changes, persistence changes, or release behavior in an issue first.
+- Keep pull requests focused and preserve unrelated work.
+- Never include captured machine data, credentials, logs, databases, generated binaries, or personal paths.
 
-## Local setup
+## Development setup
 
-Use Windows 11 with Node.js 22, Rust 1.88, and the Tauri 2 Windows prerequisites.
+Install Windows 11, Node.js 22, Rust 1.88, and the [Tauri 2 Windows prerequisites](https://v2.tauri.app/start/prerequisites/), then run:
 
 ```powershell
 npm ci
-npm run tauri dev
+npm run app
 ```
 
-The web-only preview (`npm run dev`) cannot access system data and must continue to show that limitation honestly.
+`npm run dev` opens a web-only preview. It cannot access real system data and must continue to explain that limitation honestly.
+
+## Branches
+
+`main` is the only permanent branch. Create a short-lived branch using one of these forms:
+
+- `feature/<name>` for user-visible capabilities.
+- `fix/<name>` for defects.
+- `security/<name>` for coordinated security work.
+- `refactor/<name>` for behavior-preserving restructuring.
+- `test/<name>` for test-only work.
+- `docs/<name>` for public documentation.
+- `chore/<name>` for tooling and maintenance.
+
+Use lowercase descriptive names, such as `fix/docker-timeout`. Dependabot branches are managed automatically. Do not create permanent `feature`, `fix`, or `develop` branches.
 
 ## Engineering expectations
 
-- Keep privileged OS, process, network, filesystem, database, Docker, and subprocess behavior in Rust.
-- Expose narrow typed commands and validate inputs again in Rust; never construct shell strings from frontend input.
+- Keep OS, process, network, filesystem, database, Docker, and subprocess operations in Rust.
+- Expose narrow typed Tauri commands and validate all frontend input again in Rust.
+- Never interpolate user input into a shell string; use an exact executable and argument vector.
 - Preserve offline operation, zero clean-launch egress, and telemetry-free defaults.
-- Do not display invented data or implied success. Represent unsupported, partial, permission-denied, and error states explicitly.
-- Inspection is read-only by default. Mutations need exact previews, confirmation, bounded scope, identity/path revalidation, and documented reversibility.
-- Never use real user data for destructive tests. Use temporary synthetic fixtures only.
-- Redact secrets and control characters from logs, errors, snapshots, exports, and UI output.
-- Add tests for behavior and regression risk, including negative and permission-limited paths.
+- Never invent metrics, reachability, relationships, or success. Label unavailable and partial evidence clearly.
+- Keep inspection read-only by default. Mutations require exact previews, bounded targets, confirmation, and immediate revalidation.
+- Treat process identity as PID plus start time.
+- Redact secrets and control characters from logs, errors, diagnostics, exports, snapshots, and UI output.
+- Bound file traversal, parser inputs, retained logs, metric history, probes, and subprocess duration.
+- Use only temporary synthetic fixtures for destructive tests.
+- Keep TypeScript strict and treat Rust Clippy warnings seriously.
 
 ## Verification
 
-Run checks proportional to the change. Before a phase is marked complete, run the full applicable gate:
+Run checks proportional to the change. The full gate is:
 
 ```powershell
+npm run repo:check
+npm run branch:check
 npm run format:check
 npm run lint
 npm run typecheck
@@ -48,10 +67,18 @@ cargo test --manifest-path src-tauri/Cargo.toml --all-features
 npm run tauri build -- --debug --no-bundle
 ```
 
-Record exact results and limitations in `docs/IMPLEMENTATION_STATUS.md`; never report a check as passing unless it completed successfully in the current worktree.
+Never report a check as passing unless it completed in the submitted worktree. If a host policy or missing browser blocks a check, state that limitation explicitly.
 
 ## Pull requests
 
-A pull request should explain the user-visible outcome, phase and acceptance criterion, trust-boundary or data-flow impact, tests run and their results, known limitations, and any documentation updates. Keep generated binaries, machine data, databases, logs, caches, secrets, and machine-specific paths out of Git.
+Each pull request should include:
 
-By contributing, you agree that your contribution is licensed under the Apache License 2.0 and that you will follow `CODE_OF_CONDUCT.md`.
+- The user-visible outcome and reason for the change.
+- Any effect on permissions, privacy, safety, data flow, or persistence.
+- Tests run and their exact results.
+- Known limitations and unsupported cases.
+- Relevant public documentation changes.
+
+All required checks must pass before squash-merging. Resolve review conversations and keep generated artifacts out of Git.
+
+By contributing, you agree that your contribution is licensed under Apache-2.0 and that you will follow the [Code of Conduct](CODE_OF_CONDUCT.md).

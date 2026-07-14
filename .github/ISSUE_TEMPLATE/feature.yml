@@ -1,0 +1,49 @@
+name: Feature request
+description: Propose a focused local-first improvement.
+title: "[Feature]: "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What developer workflow is difficult today?
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: Describe the useful behavior without prescribing an unsafe implementation.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and data source
+      description: Which real local evidence could support this feature without fabricated data?
+    validations:
+      required: true
+  - type: dropdown
+    id: network
+    attributes:
+      label: External network access
+      options:
+        - Not required
+        - Explicit opt-in only
+        - Unsure
+    validations:
+      required: true
+  - type: textarea
+    id: safety
+    attributes:
+      label: Permissions, privacy, and safety impact
+      description: Note any filesystem, process, network, Docker, persistence, or mutation boundary involved.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Request check
+      options:
+        - label: Mr Manager must remain useful without an account, cloud service, API key, telemetry, or mandatory internet access.
+          required: true

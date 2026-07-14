@@ -1,8 +1,16 @@
 node_modules
 dist
 coverage
+playwright-report
+test-results
+blob-report
 src-tauri/target
 src-tauri/target-phase3-test
 src-tauri/gen
 package-lock.json
+AGENTS.md
+CHANGELOG.md
 DEVDOCK_CODEX_MASTER_PROMPT.md
+PRIVACY.md
+docs
+fixtures/**/*.md

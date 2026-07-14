@@ -1,18 +1,84 @@
-node_modules/
-dist/
-coverage/
-playwright-report/
-test-results/
-src-tauri/target/
-src-tauri/target-phase3-test/
-src-tauri/gen/
+# Internal planning and agent state (kept locally, never published)
+/.agents/
+/.codex/
+/docs/
+*.md
+!/README.md
+!/CONTRIBUTING.md
+!/SECURITY.md
+!/CODE_OF_CONDUCT.md
+
+# JavaScript, TypeScript, Vite, tests, and coverage
+/node_modules/
+/dist/
+/coverage/
+/.vite/
+/.cache/
+/.eslintcache
+*.tsbuildinfo
+/playwright-report/
+/test-results/
+/blob-report/
+
+# Rust and Tauri build output
+/target/
+/src-tauri/target*/
+/src-tauri/gen/
+**/*.rs.bk
+
+# Local application state and captured diagnostics
 *.log
+/logs/
 *.sqlite
 *.sqlite3
+*.sqlite-*
+*.db
+*.db-*
+*.wal
+*.shm
+/quarantine/
+/app-data/
+
+# Environment files and credential material
 .env
 .env.*
 !.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Generated binaries, installers, archives, and debug symbols
+*.exe
+*.dll
+*.pdb
+*.msi
+*.msix
+*.msixbundle
+*.appx
+*.appxbundle
+*.dmg
+*.deb
+*.rpm
+*.AppImage
+*.zip
+
+# Editors and operating systems
 .DS_Store
 Thumbs.db
+Desktop.ini
 .idea/
 .vscode/
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Temporary and backup files
+~$*
+*.tmp
+*.temp
+*.bak
+*.swp
+*.orig
