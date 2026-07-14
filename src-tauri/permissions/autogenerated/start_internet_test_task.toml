@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-start-internet-test-task"
+description = "Enables the start_internet_test_task command without any pre-configured scope."
+commands.allow = ["start_internet_test_task"]
+
+[[permission]]
+identifier = "deny-start-internet-test-task"
+description = "Denies the start_internet_test_task command without any pre-configured scope."
+commands.deny = ["start_internet_test_task"]

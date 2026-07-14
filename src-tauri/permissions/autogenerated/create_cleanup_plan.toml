@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-create-cleanup-plan"
+description = "Enables the create_cleanup_plan command without any pre-configured scope."
+commands.allow = ["create_cleanup_plan"]
+
+[[permission]]
+identifier = "deny-create-cleanup-plan"
+description = "Denies the create_cleanup_plan command without any pre-configured scope."
+commands.deny = ["create_cleanup_plan"]

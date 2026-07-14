@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-get-metric-recording"
+description = "Enables the get_metric_recording command without any pre-configured scope."
+commands.allow = ["get_metric_recording"]
+
+[[permission]]
+identifier = "deny-get-metric-recording"
+description = "Denies the get_metric_recording command without any pre-configured scope."
+commands.deny = ["get_metric_recording"]

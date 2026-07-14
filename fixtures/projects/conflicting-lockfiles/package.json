@@ -1,0 +1,9 @@
+{
+  "name": "desktop-manager-fixture-conflicting-lockfiles",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "node server.mjs"
+  },
+  "packageManager": "npm@10.0.0"
+}

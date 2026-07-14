@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-list-quarantine-manifests"
+description = "Enables the list_quarantine_manifests command without any pre-configured scope."
+commands.allow = ["list_quarantine_manifests"]
+
+[[permission]]
+identifier = "deny-list-quarantine-manifests"
+description = "Denies the list_quarantine_manifests command without any pre-configured scope."
+commands.deny = ["list_quarantine_manifests"]

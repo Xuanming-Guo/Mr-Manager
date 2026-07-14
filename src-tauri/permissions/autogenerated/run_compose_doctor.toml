@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-run-compose-doctor"
+description = "Enables the run_compose_doctor command without any pre-configured scope."
+commands.allow = ["run_compose_doctor"]
+
+[[permission]]
+identifier = "deny-run-compose-doctor"
+description = "Denies the run_compose_doctor command without any pre-configured scope."
+commands.deny = ["run_compose_doctor"]

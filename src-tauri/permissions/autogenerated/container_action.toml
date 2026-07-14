@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-container-action"
+description = "Enables the container_action command without any pre-configured scope."
+commands.allow = ["container_action"]
+
+[[permission]]
+identifier = "deny-container-action"
+description = "Denies the container_action command without any pre-configured scope."
+commands.deny = ["container_action"]

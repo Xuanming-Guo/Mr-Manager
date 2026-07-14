@@ -1,0 +1,17 @@
+[project]
+name = "desktop-manager-fixture-api"
+version = "0.1.0"
+description = "Synthetic uv-managed Python project"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+fixture-api = "fixture_api.main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+package = true
+

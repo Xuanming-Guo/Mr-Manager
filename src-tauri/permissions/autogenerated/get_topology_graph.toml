@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-get-topology-graph"
+description = "Enables the get_topology_graph command without any pre-configured scope."
+commands.allow = ["get_topology_graph"]
+
+[[permission]]
+identifier = "deny-get-topology-graph"
+description = "Denies the get_topology_graph command without any pre-configured scope."
+commands.deny = ["get_topology_graph"]

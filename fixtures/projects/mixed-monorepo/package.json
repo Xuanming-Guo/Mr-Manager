@@ -1,0 +1,10 @@
+{
+  "name": "desktop-manager-fixture-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.0.0",
+  "scripts": {
+    "dev:web": "pnpm --filter fixture-web dev",
+    "check": "pnpm --recursive test"
+  }
+}

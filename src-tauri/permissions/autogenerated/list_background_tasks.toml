@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-list-background-tasks"
+description = "Enables the list_background_tasks command without any pre-configured scope."
+commands.allow = ["list_background_tasks"]
+
+[[permission]]
+identifier = "deny-list-background-tasks"
+description = "Denies the list_background_tasks command without any pre-configured scope."
+commands.deny = ["list_background_tasks"]

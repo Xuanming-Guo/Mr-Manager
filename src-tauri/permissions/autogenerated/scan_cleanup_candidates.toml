@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-scan-cleanup-candidates"
+description = "Enables the scan_cleanup_candidates command without any pre-configured scope."
+commands.allow = ["scan_cleanup_candidates"]
+
+[[permission]]
+identifier = "deny-scan-cleanup-candidates"
+description = "Denies the scan_cleanup_candidates command without any pre-configured scope."
+commands.deny = ["scan_cleanup_candidates"]

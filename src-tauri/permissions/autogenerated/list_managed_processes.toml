@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-list-managed-processes"
+description = "Enables the list_managed_processes command without any pre-configured scope."
+commands.allow = ["list_managed_processes"]
+
+[[permission]]
+identifier = "deny-list-managed-processes"
+description = "Denies the list_managed_processes command without any pre-configured scope."
+commands.deny = ["list_managed_processes"]

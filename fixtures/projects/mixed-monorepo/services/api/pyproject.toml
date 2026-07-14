@@ -1,0 +1,10 @@
+[project]
+name = "fixture-monorepo-api"
+version = "0.1.0"
+description = "Synthetic Python member in a mixed monorepo"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.uv]
+package = false
+

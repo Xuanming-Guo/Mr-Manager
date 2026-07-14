@@ -1,0 +1,8 @@
+node_modules
+dist
+coverage
+src-tauri/target
+src-tauri/target-phase3-test
+src-tauri/gen
+package-lock.json
+DEVDOCK_CODEX_MASTER_PROMPT.md

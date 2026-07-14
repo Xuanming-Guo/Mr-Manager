@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-purge-quarantine-item"
+description = "Enables the purge_quarantine_item command without any pre-configured scope."
+commands.allow = ["purge_quarantine_item"]
+
+[[permission]]
+identifier = "deny-purge-quarantine-item"
+description = "Denies the purge_quarantine_item command without any pre-configured scope."
+commands.deny = ["purge_quarantine_item"]

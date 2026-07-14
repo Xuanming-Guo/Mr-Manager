@@ -1,0 +1,13 @@
+lockfileVersion: "9.0"
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+  .: {}
+  apps/web:
+    devDependencies:
+      vite:
+        specifier: 8.1.4
+        version: 8.1.4

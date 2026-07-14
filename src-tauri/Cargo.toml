@@ -1,0 +1,51 @@
+[package]
+name = "mr-manager"
+version = "0.1.0"
+description = "Local-first Windows development command center"
+authors = ["Mr Manager contributors"]
+edition = "2024"
+rust-version = "1.88"
+license = "Apache-2.0"
+
+[lib]
+name = "mr_manager_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "=2.6.3", features = [] }
+
+[dependencies]
+serde = { version = "=1.0.228", features = ["derive"] }
+serde_json = "=1.0.150"
+sysinfo = "=0.38.4"
+tauri = { version = "=2.11.5", features = [] }
+tauri-plugin-dialog = "=2.7.1"
+thiserror = "=2.0.18"
+tokio = { version = "=1.52.3", features = ["rt-multi-thread", "sync", "time"] }
+tracing = "=0.1.44"
+tracing-appender = "=0.2.4"
+tracing-subscriber = { version = "=0.3.22", features = ["env-filter"] }
+rusqlite = { version = "=0.39.0", features = ["bundled"] }
+regex = "=1.13.0"
+toml = "=0.9.12"
+uuid = { version = "=1.23.4", features = ["v4"] }
+windows = { version = "=0.62.2", features = [
+  "Win32_Foundation",
+  "Win32_NetworkManagement_IpHelper",
+  "Win32_NetworkManagement_Ndis",
+  "Win32_Networking_WinSock",
+  "Win32_Security",
+  "Win32_System_JobObjects",
+  "Win32_System_Power",
+  "Win32_System_Threading",
+] }
+
+[dev-dependencies]
+tempfile = "=3.24.0"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = true

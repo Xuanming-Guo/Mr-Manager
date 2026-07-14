@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-get-docker-inventory"
+description = "Enables the get_docker_inventory command without any pre-configured scope."
+commands.allow = ["get_docker_inventory"]
+
+[[permission]]
+identifier = "deny-get-docker-inventory"
+description = "Denies the get_docker_inventory command without any pre-configured scope."
+commands.deny = ["get_docker_inventory"]

@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-get-ollama-status"
+description = "Enables the get_ollama_status command without any pre-configured scope."
+commands.allow = ["get_ollama_status"]
+
+[[permission]]
+identifier = "deny-get-ollama-status"
+description = "Denies the get_ollama_status command without any pre-configured scope."
+commands.deny = ["get_ollama_status"]

@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-add-metric-annotation"
+description = "Enables the add_metric_annotation command without any pre-configured scope."
+commands.allow = ["add_metric_annotation"]
+
+[[permission]]
+identifier = "deny-add-metric-annotation"
+description = "Denies the add_metric_annotation command without any pre-configured scope."
+commands.deny = ["add_metric_annotation"]

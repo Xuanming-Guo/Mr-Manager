@@ -1,0 +1,39 @@
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "0.0.0.0:8080:80"
+    depends_on:
+      - api
+    volumes:
+      - ./missing-nginx.conf:/etc/nginx/conf.d/default.conf:ro
+
+  api:
+    image: node:20
+    ports:
+      - "8080:3000"
+    environment:
+      - API_KEY=${API_KEY}
+      - DATABASE_URL=${DATABASE_URL}
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - appnet
+
+  db:
+    image: postgres:latest
+    ports:
+      - "0.0.0.0:5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    networks:
+      - appnet
+
+volumes:
+  pgdata:
+
+networks:
+  appnet:

@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-update-project-metadata"
+description = "Enables the update_project_metadata command without any pre-configured scope."
+commands.allow = ["update_project_metadata"]
+
+[[permission]]
+identifier = "deny-update-project-metadata"
+description = "Denies the update_project_metadata command without any pre-configured scope."
+commands.deny = ["update_project_metadata"]
