@@ -59,7 +59,7 @@ export function AppShell() {
 
   return (
     <div className="app-frame">
-      <aside className="sidebar" aria-label="Primary navigation">
+      <aside className="sidebar" aria-label="Application sidebar">
         <div className="brand-block">
           <div className="brand-mark" aria-hidden="true">
             MM
@@ -70,7 +70,7 @@ export function AppShell() {
           </div>
         </div>
 
-        <nav className="nav-list">
+        <nav className="nav-list" aria-label="Primary navigation">
           <div className="nav-section-label">Live</div>
           {primaryNavigation.map(({ to, label, icon: Icon }) => (
             <NavLink key={to} to={to} end={to === "/"} className="nav-item">
